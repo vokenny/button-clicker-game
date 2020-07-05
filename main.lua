@@ -35,7 +35,7 @@ end
 
 function love.update(dt)
   --[[
-  Game loop freshes on every frame
+  Game loop refreshes on every frame
   60 fps by default for Lua games
 
   dt = time passed since last frame
