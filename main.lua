@@ -64,26 +64,35 @@ function love.draw()
   love.graphics.setBackgroundColor(0.44, 0.8, 0.8)
 
   if (gameState == 2) then
-    love.graphics.setColor(0.8, 0.44, 0.44)
-    love.graphics.circle("fill", button.x, button.y, button.radius)
-    love.graphics.setColor(0, 0, 0)
-    love.graphics.circle("line", button.x, button.y, button.radius)
-
-    love.graphics.setColor(1, 1, 1)
-    love.graphics.setFont(myFont)
-    love.graphics.print("Score: " .. score)
-    love.graphics.print("Time: " .. math.ceil(timer), (love.graphics.getWidth() / 2) - 135, 0)
+    displayButton()
+    displayHeaderLabels()
   else
-    love.graphics.setColor(0.8, 0.44, 0.44)
-    love.graphics.circle("fill", button.x, button.y, button.radius)
-    love.graphics.setColor(0, 0, 0)
-    love.graphics.circle("line", button.x, button.y, button.radius)
-    love.graphics.setColor(0.8, 0.44, 0.44)
-    love.graphics.rectangle("fill", quit.x, quit.y, quit.width, quit.height)
-    love.graphics.setColor(0, 0, 0)
-    love.graphics.rectangle("line", quit.x, quit.y, quit.width, quit.height)
+    displayButton()
+    displayHeaderLabels()
+    displayQuitButton()
     displayMenu()
   end
+end
+
+function displayButton()
+  love.graphics.setColor(0.8, 0.44, 0.44)
+  love.graphics.circle("fill", button.x, button.y, button.radius)
+  love.graphics.setColor(0, 0, 0)
+  love.graphics.circle("line", button.x, button.y, button.radius)
+end
+
+function displayHeaderLabels()
+  love.graphics.setColor(1, 1, 1)
+  love.graphics.setFont(myFont)
+  love.graphics.print("Score: " .. score)
+  love.graphics.print("Time: " .. math.ceil(timer), (love.graphics.getWidth() / 2) - 135, 0)
+end
+
+function displayQuitButton()
+  love.graphics.setColor(0.8, 0.44, 0.44)
+  love.graphics.rectangle("fill", quit.x, quit.y, quit.width, quit.height)
+  love.graphics.setColor(0, 0, 0)
+  love.graphics.rectangle("line", quit.x, quit.y, quit.width, quit.height)
 end
 
 function displayMenu()
