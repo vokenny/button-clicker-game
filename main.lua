@@ -44,8 +44,6 @@ function love.update(dt)
   if gameState == 2 then
     if timer > 0 then
       timer = timer - dt
-    elseif timer == 0 then
-      gameState = gameStates["End Round"]
     else
       timer = 0
       gameState = gameStates["End Round"]
